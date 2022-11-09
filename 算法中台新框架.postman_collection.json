@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "365bc02f-3aea-466a-a018-8326f9145f07",
+		"name": "算法中台新框架",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取自身服务器信息http://172.18.43.32:16666/putDeviceConfigurationInformation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n        \"algorithmInfoCode\": \"ce202111180100007-zjk-env-sqgdj\",\r\n        \"algImageCode\": \"ce202111180100007\",\r\n        \"businessCode\": \"zjk-env-sqgdj\",\r\n        \"businessName\": \"张家口\",\r\n        \"deviceNo\": \"camera_001\",\r\n        \"deviceName\": \"摄像头11111\",\r\n        \"alarmType\": \"烟火识别算法\",\r\n        \"channel\": \"\",\r\n        \"alarmContent\": \"检测区域出现烟火\",\r\n        \"electronicFence\": {\r\n            \"type\": \"Polygon\",\r\n            \"coordinates\": [\r\n                [\r\n                    [\r\n                        0.5,\r\n                        0.723\r\n                    ],\r\n                    [\r\n                        0.4,\r\n                        0.923\r\n                    ],\r\n                    [\r\n                        0.8,\r\n                        0.923\r\n                    ],\r\n                    [\r\n                        0.8,\r\n                        0.523\r\n                    ]\r\n                ]\r\n            ]\r\n        },\r\n        \"workingTimeInterval\": [\r\n            \"00:00:00~06:00:00\",\r\n            \"13:00:00~15:00:00\"\r\n        ],\r\n        \"filterLogic\": \"timePriority\",\r\n        \"triggerMonitoringCycleTime\": 10,\r\n        \"triggerMonitoringFrequency\": 5,\r\n        \"alarmIPAddressOtherProject\": \"10.10.10.10:80/deviceAlarm\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/server_info",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"server_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "提交配置信息 http://172.18.43.32:16666/putDeviceConfigurationInformation Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n        \"algorithmInfoCode\": \"ce202111180100007-zjk-env-sqgdj\",\r\n        \"algImageCode\": \"ce202111180100007\",\r\n        \"businessCode\": \"zjk-env-sqgdj\",\r\n        \"businessName\": \"张家口\",\r\n        \"deviceNo\": \"camera_001\",\r\n        \"ident\":\"3653273f0de74d2a287723e45b595524\",\r\n        \"shotPlanCode\":\"spcode_384e74c4b46848779c2b80f0b4b9da07\",\r\n        \"streamKafkaAddress\":\"10.10.90.210:9092\",\r\n        \"streamKafkaTopic\":\"stream_manager_center_capture_file\",\r\n        \"deviceName\": \"摄像头11111\",\r\n        \"alarmType\": \"烟火识别算法\",\r\n        \"channel\": \"\",\r\n        \"alarmContent\": \"检测区域出现烟火\",\r\n        \"identifyThresholdIntersectionRatio\":\"\",\r\n        \"shieldThresholdIntersectionRatio\":\"\",\r\n        \"alarmShieldArea\":\"\",\r\n        \"electronicFence\": {\r\n            \"type\": \"Polygon\",\r\n            \"coordinates\": [\r\n                [\r\n                    [\r\n                        0.5,\r\n                        0.723\r\n                    ],\r\n                    [\r\n                        0.4,\r\n                        0.923\r\n                    ],\r\n                    [\r\n                        0.8,\r\n                        0.923\r\n                    ],\r\n                    [\r\n                        0.8,\r\n                        0.523\r\n                    ]\r\n                ]\r\n            ]\r\n        },\r\n        \"workingTimeInterval\": [\r\n            \"00:00:00~06:00:00\",\r\n            \"13:00:00~15:00:00\"\r\n        ],\r\n        \"filterLogic\": \"timePriority\",\r\n        \"triggerMonitoringCycleTime\": 10,\r\n        \"triggerMonitoringFrequency\": 5,\r\n        \"alarmIPAddressOtherProject\": \"10.10.10.10:80/deviceAlarm\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/putDeviceConfigurationInformation",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"putDeviceConfigurationInformation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取前端传递的配置信息-http://172.18.43.32:16666/getAllInfo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"a\":1}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/getAllInfo",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"getAllInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api的方式图片识别-识别到人",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/jianming_ge/Desktop/测试图片/point1.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/onePicByImg",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"onePicByImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api的方式图片识别-空图片",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/jianming_ge/Desktop/screenshot-20221108-160608.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/onePicByImg",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"onePicByImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本地分析图片-http://172.18.43.32:16666/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"inputValue\": \"http://106.112.143.254:8333/test/1.png,http://106.112.143.254:8333/test/screenshot-20220721-100049.png\",\r\n  \"inputType\":\"picture\",\r\n  \"minioUrl\":\"http://10.10.90.88:8113/upload\",\r\n  \"exact\": {\r\n    \"updatedTime\": \"2021-11-23 21:51:40\",\r\n    \"updatedBy\": \"null\",\r\n    \"inputParameterTypeName\": \"图片\",\r\n    \"taskState\": 1,\r\n    \"inputParameterType\": \"01\",\r\n    \"taskCode\": \"151cf820-9c77-4819-b04f-4818fdb0a53e\",\r\n    \"createdBy\": \"null\",\r\n    \"inputValue\": \"http://106.112.143.254:8333/test/1.png,http://106.112.143.254:8333/test/screenshot-20220721-100049.png\",\r\n    \"createdTime\": \"2021-11-23 21:50:18\",\r\n    \"resultUrl\": \"\",\r\n    \"id\": 1,\r\n    \"algorithmInfoCode\": \"lc202111230100028-zjk-env-rnfpw\",\r\n    \"algorithmImageName\": \"测试本地算法222\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/getAlgorithmLocalAnalysis",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"getAlgorithmLocalAnalysis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本地分析视频-http://172.18.43.32:16666",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"inputValue\": \"http://106.112.143.254:8333/algorithmgroupfiles/LocalAnalysisJC/lc202111230100028-zjk-env-rnfpw/new_video_cut.mp4\",\r\n  \"inputType\":\"video\",\r\n  \"minioUrl\":\"http://10.10.90.88:8113/upload\",\r\n  \"exact\": {\r\n    \"updatedTime\": \"2021-11-23 21:51:40\",\r\n    \"updatedBy\": \"null\",\r\n    \"inputParameterTypeName\": \"图片\",\r\n    \"taskState\": 1,\r\n    \"inputParameterType\": \"01\",\r\n    \"taskCode\": \"151cf820-9c77-4819-b04f-4818fdb0a53e\",\r\n    \"createdBy\": \"null\",\r\n    \"createdTime\": \"2021-11-23 21:50:18\",\r\n    \"resultUrl\": \"\",\r\n    \"id\": 1,\r\n    \"algorithmInfoCode\": \"lc202111230100028-zjk-env-rnfpw\",\r\n    \"algorithmImageName\": \"测试本地算法222\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.18.43.32:16666/getAlgorithmLocalAnalysis",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"43",
+						"32"
+					],
+					"port": "16666",
+					"path": [
+						"getAlgorithmLocalAnalysis"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
